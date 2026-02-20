@@ -7,12 +7,11 @@
 
 import random
 
-#TODO-1: - Update the word list to use the 'word_list' from hangman_words.py
-#Delete this line: word_list = ["ardvark","baboon","camel"]
-import hangman_words
-# Alternative: from hangman_words import word_list
+#TODO-1: - Update the word list to use the 'word_list' from hangman_words.txt
+with open("hangman-words.txt") as word_file:
+    word_list = word_file.read().splitlines() # this will read the file and split it into a list of words based on new lines.
 
-chosen_word = random.choice(hangman_words.word_list) # now you can use chosen_word = random.choice(word_list) 
+chosen_word = random.choice(word_list) # now you can use chosen_word = random.choice(word_list) 
 word_length = len(chosen_word)
 
 end_of_game = False
